@@ -19,13 +19,20 @@ const buttonControls = (props) => {
         operators.SUM
     ];
 
-    const leftButtons = leftControlsMatrix.map(arr => {
-        return arr.map(value => <ButtonControl selected={() => props.onSelected(value)} key={value} val={value}/>);
-    });
+    const leftButtons = leftControlsMatrix
+        .map(arr => arr.map(value =>
+            <ButtonControl
+                selected={() => props.onSelected(value)}
+                key={value}
+                val={value}/>));
 
     const rightButtons = rightControls.map(value => {
-        return <ButtonControl selected={() => props.onSelected(value)} _width="100%" _height="20%" key={value}
-                              val={value}/>
+        return <ButtonControl
+            selected={() => props.onSelected(value)}
+            _width="100%"
+            _height="20%"
+            key={value}
+            val={value}/>
     });
 
     return (
