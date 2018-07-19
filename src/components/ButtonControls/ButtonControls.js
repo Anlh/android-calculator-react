@@ -9,10 +9,10 @@ const buttonControls = (props) => {
         [7, 8, 9],
         [4, 5, 6],
         [1, 2, 3],
-        [',', 0, operators.EQUAL]
+        [operators.DEC_DEPARATOR, 0, operators.EQUAL]
     ];
     const rightControls = [
-        operators.DEL,
+        operators.AC,
         operators.DIV,
         operators.MULT,
         operators.SUB,
@@ -22,13 +22,13 @@ const buttonControls = (props) => {
     const leftButtons = leftControlsMatrix
         .map(arr => arr.map(value =>
             <ButtonControl
-                selected={() => props.onSelected(value)}
+                selected={() => props.buttonSelected(value)}
                 key={value}
                 val={value}/>));
 
     const rightButtons = rightControls.map(value => {
         return <ButtonControl
-            selected={() => props.onSelected(value)}
+            selected={() => props.buttonSelected(value)}
             _width="100%"
             _height="20%"
             key={value}
