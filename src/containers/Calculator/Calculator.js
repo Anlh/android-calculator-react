@@ -18,7 +18,7 @@ class Calculator extends Component {
     };
 
 
-    displayDecimalSeparator(separator){
+    displayDecimalSeparator(separator) {
         const {inputDisplay} = this.state;
         this.setState({
             inputDisplay: inputDisplay + separator
@@ -43,7 +43,7 @@ class Calculator extends Component {
         if (this.state.inputDisplay.length > 0) {
             this.operator = true;
             this.setState({
-                inputDisplay: isNaN(inputDisplay.charAt(inputDisplay.length - 1)) ?  inputDisplay.replace(/.$/, op ) : inputDisplay + op
+                inputDisplay: isNaN(inputDisplay.charAt(inputDisplay.length - 1)) ? inputDisplay.replace(/.$/, op) : inputDisplay + op
             })
         }
     }
